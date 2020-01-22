@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:semana_flutter/app/app_controller.dart';
 import 'package:semana_flutter/app/app_widget.dart';
 import 'package:semana_flutter/app/pages/home/home_controller.dart';
+import 'package:semana_flutter/app/pages/home/home_page.dart';
 
 class AppModule extends MainModule {
   @override
@@ -12,7 +13,7 @@ class AppModule extends MainModule {
       [Bind((i) => AppController()), Bind(((i) => HomeController()))];
   @override
   // TODO: implement routers
-  List<Router> get routers => [Router('/', child: (_, args) => Container())];
+  List<Router> get routers => [Router('/', child: (_, args) => HomePage())];
   @override
   // TODO: implement bootstrap
   Widget get bootstrap => AppWidget();
