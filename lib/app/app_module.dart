@@ -5,6 +5,7 @@ import 'package:semana_flutter/app/app_controller.dart';
 import 'package:semana_flutter/app/app_widget.dart';
 import 'package:semana_flutter/app/pages/home/home_controller.dart';
 import 'package:semana_flutter/app/pages/home/home_page.dart';
+import 'package:semana_flutter/app/pages/other/other_page.dart';
 
 class AppModule extends MainModule {
   @override
@@ -13,7 +14,10 @@ class AppModule extends MainModule {
       [Bind((i) => AppController()), Bind(((i) => HomeController()))];
   @override
   // TODO: implement routers
-  List<Router> get routers => [Router('/', child: (_, args) => HomePage())];
+  List<Router> get routers => [
+    Router('/', child: (_, args) => HomePage()),
+    Router('/other', child: (_, args) => OtherPage()),
+    ];
   @override
   // TODO: implement bootstrap
   Widget get bootstrap => AppWidget();

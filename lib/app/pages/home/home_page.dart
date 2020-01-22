@@ -17,6 +17,9 @@ class _HomePageState extends State<HomePage> {
           decoration: InputDecoration(labelText: 'Um texto qualquer'),
         ),
       ),
+      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed: () {
+        Navigator.pushNamed(context, '/other');
+      },),
     );
   }
 }
