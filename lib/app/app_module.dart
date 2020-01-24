@@ -15,9 +15,12 @@ class AppModule extends MainModule {
   @override
   // TODO: implement routers
   List<Router> get routers => [
-    Router('/', child: (_, args) => HomePage()),
-    Router('/other', child: (_, args) => OtherPage()),
-    ];
+        Router('/', child: (_, args) => HomePage()),
+        Router('/other/:text',
+            child: (_, args) => OtherPage(
+                  text: args.params['text'],
+                )),
+      ];
   @override
   // TODO: implement bootstrap
   Widget get bootstrap => AppWidget();
